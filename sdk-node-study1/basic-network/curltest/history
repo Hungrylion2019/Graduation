@@ -1,0 +1,12 @@
+.PHONY: all  clean 
+
+all:  build  
+
+
+##### BUILD
+build:
+	@echo "查询华农购买票据信息"
+	@curl -d 'company_name=huanong' -X POST http://localhost:8888/History/search
+	@echo "查询完毕"
+
+

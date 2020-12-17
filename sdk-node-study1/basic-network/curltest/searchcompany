@@ -1,0 +1,12 @@
+.PHONY: all  clean 
+
+all:  build  
+
+
+##### BUILD
+build:
+	@echo "查询华农公司信息"
+	@curl -d 'company_name=huawei' -X POST http://localhost:8888/company/search
+	@echo "查询完毕"
+
+

@@ -1,0 +1,12 @@
+.PHONY: all  clean 
+
+all:  build  
+
+
+##### BUILD
+build:
+	@echo "查询华农票据清单信息"
+	@curl -d 'company_name=huanong' -X POST http://localhost:8888/TicketRecord/search
+	@echo "查询完毕"
+
+

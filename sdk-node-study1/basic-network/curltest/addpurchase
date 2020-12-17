@@ -1,0 +1,12 @@
+.PHONY: all  clean 
+
+all:  build  
+
+
+##### BUILD
+build:
+	@echo "添加华农购买票据清单信息"
+	@curl -d 'company_name=huanong&purchase_record=base64purchase-record' -X POST http://localhost:8888/PurchaseRecord/add
+	@echo "查询完毕"
+
+

@@ -1,0 +1,32 @@
+.PHONY: all dev clean build env-up run
+
+all: clean build env-up run 
+
+dev: build run
+
+##### BUILD
+build:
+	@echo "Build ..."
+	@docker-compose -f docker-compose.yml up -d
+	@echo "Build done"
+
+##### ENV
+env-up:
+	@echo "Start environment ..."
+	@echo "Environment up"
+
+##### RUN
+run:
+	@echo "Start app ..."
+	@go run main.go
+
+
+##### CLEAN
+clean: 
+	@echo "Stop environment ..."
+	@echo "Environment down"
+	@docker-compose -f docker-compose.yml down 
+	@echo "Clean up done"
+	@rm -rf /tmp/lion-* 
+	@echo "Clean up ..."
+

@@ -1,0 +1,12 @@
+.PHONY: all  clean 
+
+all:  build  
+
+
+##### BUILD
+build:
+	@echo "创建公司华农"
+	@curl -d'company_name=huawei' -d 'location=hubei' -d 'restaurant=huawei' -d 'legalperson=lion' -d 'linkname=lzc' -d 'tel=182123123' -X POST http://localhost:8888/company/add
+	@echo "创建公司完毕"
+
+
